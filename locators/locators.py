@@ -15,12 +15,14 @@ class BaseLocators:
     BESTSELLERS_CATEGORY = (By.XPATH, '//span[text()="Bestsellery"]')
     ACCESSORIES_CATEGORY = (By.XPATH, '//span[text()="Dodatki"]')
     BRANDS_CATEGORY = (By.XPATH, '//span[text()="Marki"]')
-    NEWSLETTER_INPUT = (By.CSS_SELECTOR, "newsletter")
-    SUBSCRIBE_BUTTON = (By.CSS_SELECTOR, "button.subscribe")
+    NEWSLETTER_INPUT = (By.CSS_SELECTOR, "#newsletter")
+    NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "button.subscribe")
+    NEWSLETTER_ERROR_MESSAGE = (By.CSS_SELECTOR, "#newsletter-error")
     BESTSELLERS_PRODUCTS = (By.CSS_SELECTOR, ".bestsellers__flex > div > div")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button.tocart")
     ADD_TO_WISH_LIST_BUTTON = (By.CSS_SELECTOR, "a.towishlist")
     CART_PRODUCTS_COUNTER = (By.CSS_SELECTOR, ".counter-number")
+    HOME_PAGE_LOADED = (By.CSS_SELECTOR, "html.nav-open")
 
 
 class ProductLocators(BaseLocators):
