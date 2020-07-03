@@ -1,18 +1,13 @@
 from behave import Given, When, Step, Then
 
 
-@Given("I'm on the Magento home page")
-def step_impl(context):
-    context.page.open_home_page()
-
-
-@When('I enter "{xd}" email address')
-def step_impl(context, xd):
-    if xd == "correct":
+@When('I enter "{email_type}" email address')
+def step_impl(context, email_type):
+    if email_type == "correct":
         context.page.set_newsletter_email("correctemail@correctemail.com")
-    elif xd == "incorrect":
+    elif email_type == "incorrect":
         context.page.set_newsletter_email("incorrectemail@")
-    elif xd == " ":
+    elif email_type == " ":
         context.page.set_newsletter_email(" ")
 
 
