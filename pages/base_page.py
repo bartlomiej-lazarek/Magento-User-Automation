@@ -35,3 +35,6 @@ class BasePage:
             return True
         else:
             return False
+
+    def go_to_authentication_page(self):
+        self.driver.find_element(*BaseLocators.MY_ACCOUNT_ICON).click()

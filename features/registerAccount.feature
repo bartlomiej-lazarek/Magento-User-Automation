@@ -1,5 +1,6 @@
 Feature: Register new account
 
+  @home_page @authentication_page @registration_page
   Scenario: Successfully register new account
     Given I'm not logged in and I open login page
     Then I click Create Account button

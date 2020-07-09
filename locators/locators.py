@@ -25,6 +25,24 @@ class BaseLocators:
     HOME_PAGE_LOADED = (By.CSS_SELECTOR, "html.nav-open")
 
 
+class AuthenticationLocators(BaseLocators):
+    EMAIL_INPUT = (By.CSS_SELECTOR, "#email")
+    PASSWORD_INPUT = (By.CSS_SELECTOR, "#pass")
+    LOGIN_BUTTON = (By.CSS_SELECTOR, "button.login")
+    CREATE_ACC_BUTTON = (By.CSS_SELECTOR, "a.create")
+
+
+class RegistrationLocators(BaseLocators):
+    FIRST_NAME = (By.CSS_SELECTOR, "#firstname")
+    LAST_NAME = (By.CSS_SELECTOR, "#lastname")
+    NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "#is_subscribed")
+    EMAIL = (By.CSS_SELECTOR, "#email_address")
+    PASSWORD = (By.CSS_SELECTOR, "#password")
+    CONFIRMATION_PASSWORD = (By.CSS_SELECTOR, "#password-confirmation")
+    AGREEMENT = (By.CSS_SELECTOR, "#tcagreecreateaccount + label")
+    CREATE_ACCOUNT = (By.CSS_SELECTOR, "button.submit")
+
+
 class ProductLocators(BaseLocators):
     PRICE = (By.CSS_SELECTOR, "div.price-box span.price")
     ADDED_PRODUCT_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".message-success")
