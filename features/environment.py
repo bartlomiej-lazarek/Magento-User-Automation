@@ -10,8 +10,6 @@ def before_scenario(context, scenario):
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)
 
-    print(scenario.tags)
-
     if "home_page" in scenario.tags:
         context.home_page = BasePage(context.driver)
     if "authentication_page" in scenario.tags:
