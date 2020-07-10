@@ -1,5 +1,6 @@
 Feature: Add product to wish list
 
+  @home_page
   Scenario: Add product to wish list using hover as not logged  user
     Given I'm on the Magento home page
     When I hover on the product

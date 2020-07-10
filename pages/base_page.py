@@ -1,5 +1,6 @@
 import configparser
 
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -38,3 +39,12 @@ class BasePage:
 
     def go_to_authentication_page(self):
         self.driver.find_element(*BaseLocators.MY_ACCOUNT_ICON).click()
+
+    def hover_on_first_product(self):
+        ActionChains(self.driver).move_to_element(self.driver.find_element(*BaseLocators.PRODUCT_IMAGE)).perform()
+
+    def click_on_first_product(self):
+        self.driver.find_element(*BaseLocators.PRODUCT_IMAGE).click()
+
+    def add_to_wish_list(self):
+        self.driver.find_element(*BaseLocators.ADD_TO_WISH_LIST_BUTTON).click()

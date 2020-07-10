@@ -19,6 +19,7 @@ class BaseLocators:
     NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "button.subscribe")
     NEWSLETTER_ERROR_MESSAGE = (By.CSS_SELECTOR, "#newsletter-error")
     BESTSELLERS_PRODUCTS = (By.CSS_SELECTOR, ".bestsellers__flex > div > div")
+    PRODUCT_IMAGE = (By.CSS_SELECTOR, ".product-image-container")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button.tocart")
     ADD_TO_WISH_LIST_BUTTON = (By.CSS_SELECTOR, "a.towishlist")
     CART_PRODUCTS_COUNTER = (By.CSS_SELECTOR, ".counter-number")
