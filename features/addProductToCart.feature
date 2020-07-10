@@ -1,11 +1,13 @@
 Feature: Add product to cart
 
+  @home_page
   Scenario: Add simply product to cart using hover
     Given I'm on the Magento home page
     When I hover on the product
     And I click Add to Cart button
-    Then Then I should see a message saying that the product has been successfully added
+    Then I should see a message saying that the product has been successfully added
 
+  @home_page
   Scenario: Add simply product to cart from product page
     Given I'm on the Magento home page
     When I click on the product

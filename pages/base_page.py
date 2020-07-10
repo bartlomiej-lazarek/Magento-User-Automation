@@ -48,3 +48,6 @@ class BasePage:
 
     def add_to_wish_list(self):
         self.driver.find_element(*BaseLocators.ADD_TO_WISH_LIST_BUTTON).click()
+
+    def add_to_cart(self):
+        self.driver.find_element(*BaseLocators.ADD_TO_CART_BUTTON).click()

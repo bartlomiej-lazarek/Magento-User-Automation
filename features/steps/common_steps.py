@@ -1,4 +1,4 @@
-from behave import Given, When, Then
+from behave import Given, When, Then, Step
 
 
 @Given("I'm on the Magento home page")
@@ -19,3 +19,8 @@ def step_impl(context):
 @Then("I should be redirect to login page")
 def step_impl(context):
     assert "/customer/account/login" in context.driver.current_url
+
+
+@Step("I click Add to Cart button")
+def step_impl(context):
+    context.home_page.add_to_cart()
