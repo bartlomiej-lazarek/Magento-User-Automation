@@ -1,16 +1,12 @@
 import configparser
+import time
 
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from locators.locators import BaseLocators
-
-
-def get_shop_url():
-    config = configparser.ConfigParser()
-    config.read("config.ini")
-    return config.get("SETUP", "url")
+from locators.locators import BaseLocators, ProductLocators
 
 
 class BasePage:
@@ -18,7 +14,11 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10, 0.5)
-        self.home_url = get_shop_url()
+        config = configparser.ConfigParser()
+        config.read("config.ini")
+        self.home_url = config.get("SETUP", "url_page")
+        self.list_view_configurable_options = config.get("SETUP", "url_list_view_configurable_options")
+        self.configurable_product_page = config.get("SETUP", "url_configurable_product_page")
 
     def open_home_page(self):
         self.driver.get(self.home_url)
@@ -51,3 +51,14 @@ class BasePage:
 
     def add_to_cart(self):
         self.driver.find_element(*BaseLocators.ADD_TO_CART_BUTTON).click()
+
+    def go_to_page_with_configurable_product_on_list(self):
+        self.driver.get(self.list_view_configurable_options)
+        self.wait.until(EC.presence_of_element_located(BaseLocators.HOME_PAGE_LOADED))
+
+    def go_to_configurable_product_page(self):
+        self.driver.get(self.configurable_product_page)
+        self.wait.until(EC.presence_of_element_located(BaseLocators.HOME_PAGE_LOADED))
+
+    def choose_first_attribute(self):
+        self.driver.find_element(*ProductLocators.PRODUCT_OPTIONS).click()
