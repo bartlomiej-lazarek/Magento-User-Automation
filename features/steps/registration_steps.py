@@ -1,4 +1,4 @@
-from behave import Given, When, Step, Then
+from behave import Given, Step, Then
 
 
 @Given("I'm not logged in and I open login page")

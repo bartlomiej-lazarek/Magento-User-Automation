@@ -7,8 +7,8 @@ Feature: Add product to wish list
     And I click on Add to wish list button
     Then I should be redirect to login page
 
-  @home_page
-  Scenario: Add product to wish list from product not logged user
+  @home_page @skip
+  Scenario: Add product to wish list from product page as not logged user
     Given I'm on the Magento home page
     When I click on the product
     And I click on Add to wish list button

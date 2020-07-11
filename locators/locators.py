@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class BaseLocators:
+class HomeLocators:
     SHOP_LOGO = (By.CSS_SELECTOR, ".logo")
     SEARCH_ICON = (By.CSS_SELECTOR, ".field.search")
     SEARCH_INPUT = (By.CSS_SELECTOR, "#search")
@@ -26,14 +26,14 @@ class BaseLocators:
     HOME_PAGE_LOADED = (By.CSS_SELECTOR, "html.nav-open")
 
 
-class AuthenticationLocators(BaseLocators):
+class AuthenticationLocators(HomeLocators):
     EMAIL_INPUT = (By.CSS_SELECTOR, "#email")
     PASSWORD_INPUT = (By.CSS_SELECTOR, "#pass")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "button.login")
     CREATE_ACC_BUTTON = (By.CSS_SELECTOR, "a.create")
 
 
-class RegistrationLocators(BaseLocators):
+class RegistrationLocators(HomeLocators):
     FIRST_NAME = (By.CSS_SELECTOR, "#firstname")
     LAST_NAME = (By.CSS_SELECTOR, "#lastname")
     NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "#is_subscribed")
@@ -44,7 +44,7 @@ class RegistrationLocators(BaseLocators):
     CREATE_ACCOUNT = (By.CSS_SELECTOR, "button.submit")
 
 
-class ProductLocators(BaseLocators):
+class ProductLocators(HomeLocators):
     PRICE = (By.CSS_SELECTOR, "div.price-box span.price")
     ADDED_PRODUCT_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".message-success")
     PRODUCT_ATTRIBUTES = (By.CSS_SELECTOR, '[data-role="swatch-options"]')

@@ -1,5 +1,3 @@
-import configparser
-
 from locators.locators import RegistrationLocators
 from pages.base_page import BasePage
 
@@ -8,13 +6,11 @@ class RegistrationPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        config = configparser.ConfigParser()
-        config.read("config.ini")
-        self.first_name = config.get("ACCOUNT", "first_name")
-        self.last_name = config.get("ACCOUNT", "last_name")
-        self.email = config.get("ACCOUNT", "email")
-        self.password = config.get("ACCOUNT", "password")
-        self.confirm_password = config.get("ACCOUNT", "confirmation_password")
+        self.first_name = self.config.get("ACCOUNT", "first_name")
+        self.last_name = self.config.get("ACCOUNT", "last_name")
+        self.email = self.config.get("ACCOUNT", "email")
+        self.password = self.config.get("ACCOUNT", "password")
+        self.confirm_password = self.config.get("ACCOUNT", "confirmation_password")
 
     def fill_registration_form(self):
         self.driver.find_element(*RegistrationLocators.FIRST_NAME).clear()

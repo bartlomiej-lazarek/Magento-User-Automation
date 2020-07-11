@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 from pages.authentication_page import AuthenticationPage
-from pages.base_page import BasePage
+from pages.home_page import HomePage
 from pages.registration_page import RegistrationPage
 
 
@@ -10,8 +10,11 @@ def before_scenario(context, scenario):
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)
 
+    if "skip" in scenario.tags:
+        scenario.skip("Marked with @skip")
+        return
     if "home_page" in scenario.tags:
-        context.home_page = BasePage(context.driver)
+        context.home_page = HomePage(context.driver)
     if "authentication_page" in scenario.tags:
         context.auth_page = AuthenticationPage(context.driver)
     if "registration_page" in scenario.tags:
