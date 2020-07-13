@@ -14,6 +14,7 @@ Feature: Add product to wish list
     And I click on Add to wish list button
     Then I should be redirect to login page
 
+  @home_page @authentication_page
   Scenario: Add product to wish list using hover as logged user
     Given I'm logged user
     And I'm on the Magento home page
@@ -22,7 +23,8 @@ Feature: Add product to wish list
     Then I should be redirect to wish list page
     And I should see a message saying that the product has been successfully added to wish list
 
-  Scenario: Add product to wish list using hover as logged user
+  @home_page @authentication_page
+  Scenario: Add product to wish list from product pager as logged user
     Given I'm logged user
     And I'm on the Magento home page
     When I click on the product

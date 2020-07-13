@@ -29,3 +29,11 @@ def step_impl(context):
 @Then("I should be redirect to My Account page")
 def step_impl(context):
     assert "/customer/account/index/" in context.driver.current_url
+
+
+@Given("I'm logged user")
+def step_impl(context):
+    context.home_page.open_home_page()
+    context.home_page.go_to_authentication_page()
+    context.authentication_page.fill_login_form(True)
+    context.authentication_page.perform_login()
