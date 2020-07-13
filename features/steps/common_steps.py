@@ -24,3 +24,8 @@ def step_impl(context):
 @Step("I click Add to Cart button")
 def step_impl(context):
     context.home_page.add_to_cart()
+
+
+@Then("I should be redirect to My Account page")
+def step_impl(context):
+    assert "/customer/account/index/" in context.driver.current_url

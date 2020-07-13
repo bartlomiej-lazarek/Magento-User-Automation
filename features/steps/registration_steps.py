@@ -22,11 +22,6 @@ def step_impl(context):
     context.registration_page.perform_registration()
 
 
-@Then("I should be redirect to My Account page")
-def step_impl(context):
-    assert "/customer/account/index/" in context.driver.current_url
-
-
 @Step("I should see a message saying that the account has been successfully created")
 def step_impl(context):
     assert len(context.driver.find_elements_by_css_selector(".message-success")) > 0

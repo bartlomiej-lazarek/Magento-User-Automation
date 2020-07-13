@@ -16,7 +16,7 @@ def before_scenario(context, scenario):
     if "home_page" in scenario.tags:
         context.home_page = HomePage(context.driver)
     if "authentication_page" in scenario.tags:
-        context.auth_page = AuthenticationPage(context.driver)
+        context.authentication_page = AuthenticationPage(context.driver)
     if "registration_page" in scenario.tags:
         context.registration_page = RegistrationPage(context.driver)
 
