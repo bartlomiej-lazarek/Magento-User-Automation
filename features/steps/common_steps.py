@@ -37,3 +37,18 @@ def step_impl(context):
     context.home_page.go_to_authentication_page()
     context.authentication_page.fill_login_form(True)
     context.authentication_page.perform_login()
+
+
+@Step('I add "{qty}" products to cart')
+def step_impl(context, qty):
+    context.home_page.add_to_cart_x_products(int(qty))
+
+
+@Then("I should be redirected to home page")
+def step_impl(context):
+    assert context.home_page.home_url in context.driver.current_url
+
+
+@Then("I should be redirected to checkout-shipping page")
+def step_impl(context):
+    assert "/checkout/#shipping" in context.driver.current_url

@@ -1,7 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as ec
 
-from locators.locators import HomeLocators, ProductLocators
+from locators.locators import HomeLocators, ProductLocators, CartLocators
 from pages.base_page import BasePage
 
 
@@ -36,6 +36,21 @@ class HomePage(BasePage):
 
     def add_to_cart(self):
         self.driver.find_element(*HomeLocators.ADD_TO_CART_BUTTON).click()
+
+    def add_to_cart_x_products(self, products_qty):
+        self.driver.find_element(*HomeLocators.BESTSELLERS_CATEGORY).click()
+
+        for i in range(products_qty):
+            products_list = self.driver.find_elements(*HomeLocators.PRODUCT_IMAGE)
+            products_list[i].click()
+            self.add_to_cart()
+            self.wait.until(ec.presence_of_element_located(HomeLocators.ADD_TO_CART_ACTIVE))
+            self.driver.find_element(*HomeLocators.BESTSELLERS_CATEGORY).click()
+
+    def go_to_cart(self):
+        self.driver.find_element(*HomeLocators.CART_ICON).click()
+        self.driver.find_element(*HomeLocators.GO_TO_CART).click()
+        self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
 
     def go_to_page_with_configurable_product_on_list(self):
         self.driver.get(self.list_view_configurable_options)

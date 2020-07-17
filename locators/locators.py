@@ -8,6 +8,7 @@ class HomeLocators:
     MY_ACCOUNT_ICON = (By.CSS_SELECTOR, ".header.links > li")
     WISH_LIST_ICON = (By.CSS_SELECTOR, ".link.wishlist")
     CART_ICON = (By.CSS_SELECTOR, ".showcart")
+    GO_TO_CART = (By.CSS_SELECTOR, ".viewcart")
     WOMAN_CATEGORY = (By.XPATH, '//span[text()="Damskie"]')
     MEN_CATEGORY = (By.XPATH, '//span[text()="Męskie"]')
     OUTLET_CATEGORY = (By.XPATH, '//span[text()="Outlet"]')
@@ -21,6 +22,7 @@ class HomeLocators:
     BESTSELLERS_PRODUCTS = (By.CSS_SELECTOR, ".bestsellers__flex > div > div")
     PRODUCT_IMAGE = (By.CSS_SELECTOR, ".product-image-container")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button.tocart")
+    ADD_TO_CART_ACTIVE = (By.CSS_SELECTOR, "button#product-addtocart-button:not(.disabled)")
     ADD_TO_WISH_LIST_BUTTON = (By.CSS_SELECTOR, "a.towishlist")
     CART_PRODUCTS_COUNTER = (By.CSS_SELECTOR, ".counter-number")
     HOME_PAGE_LOADED = (By.CSS_SELECTOR, "html.nav-open")
@@ -68,6 +70,7 @@ class CartLocators:
     PRODUCTS = (By.CSS_SELECTOR, "#shopping-cart-table > tbody")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "td.price .price-excluding-tax")
     PRODUCT_QTY_INPUT = (By.CSS_SELECTOR, '[data-role="cart-item-qty"]')
+    PRODUCT_TOTAL_PRICE = (By.CSS_SELECTOR, "td.subtotal .price-excluding-tax")
     CHANGE_QTY_MINUS = (By.CSS_SELECTOR, ".change-value-minus")
     CHANGE_QTY_PLUS = (By.CSS_SELECTOR, ".change-value-plus")
     DELETE_PRODUCT = (By.CSS_SELECTOR, ".action-delete")
@@ -78,6 +81,9 @@ class CartLocators:
     SHIPPING_PRICE = (By.CSS_SELECTOR, "tr.shipping .price")
     TOTAL_ORDER_PRICE = (By.CSS_SELECTOR, "tr.grand .price")
     PROCEED_TO_CHECKOUT = (By.CSS_SELECTOR, "button.checkout")
+    LOADED_CHECKOUT = (By.CSS_SELECTOR, "body[aria-busy='false']")
+    COUPON_CODE = (By.CSS_SELECTOR, "#coupon_code")
+    CONFIRM_COUPON_CODE = (By.CSS_SELECTOR, "button.apply")
 
 
 class ShippingLocators:
