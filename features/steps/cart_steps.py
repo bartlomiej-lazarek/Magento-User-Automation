@@ -47,8 +47,6 @@ def step_impl(context):
 
 @Then("Product total sum should be equal to unit price times quantity")
 def step_impl(context):
-    # todo Have to wait until page will be reloaded
-    time.sleep(5)
     assert context.cart_page.calculate_product_total_price() == context.cart_page.get_product_total_price()
 
 
@@ -59,8 +57,6 @@ def step_impl(context):
 
 @Then("Should be 2 products in cart")
 def step_impl(context):
-    # todo Have to wait until page will be reloaded
-    time.sleep(5)
     assert context.cart_page.get_number_of_products_in_cart() == 2
 
 
@@ -71,8 +67,6 @@ def step_impl(context):
 
 @Then("Cart should be empty")
 def step_impl(context):
-    # todo Have to wait until page will be reloaded
-    time.sleep(5)
     assert context.cart_page.get_number_of_products_in_cart() == 0
 
 

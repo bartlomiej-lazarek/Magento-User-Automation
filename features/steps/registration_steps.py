@@ -9,7 +9,7 @@ def step_impl(context):
 
 @Then("I click Create Account button")
 def step_impl(context):
-    context.auth_page.open_create_account_form()
+    context.authentication_page.open_create_account_form()
 
 
 @Step("I enter all the required registration information")

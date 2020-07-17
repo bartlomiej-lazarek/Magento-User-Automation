@@ -1,6 +1,4 @@
-import time
-
-from locators.locators import CartLocators, HomeLocators
+from locators.locators import CartLocators
 from pages.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as ec
 
@@ -45,7 +43,8 @@ class CartPage(BasePage):
                      .split(" ")[0].replace(",", "."))
 
     def recalculate_cart(self):
-        return self.driver.find_element(*CartLocators.UPDATE_CART).click()
+        self.driver.find_element(*CartLocators.UPDATE_CART).click()
+        self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
 
     def calculate_product_total_price(self):
         product_qty = self.get_product_qty()
@@ -55,10 +54,12 @@ class CartPage(BasePage):
 
     def remove_product(self):
         self.driver.find_element(*CartLocators.DELETE_PRODUCT).click()
+        self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
 
     def remove_all_products(self):
         self.driver.find_element(*CartLocators.CLEAR_CART).click()
         self.driver.switch_to.alert.accept()
+        self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
 
     def get_number_of_products_in_cart(self):
         return len(self.driver.find_elements(*CartLocators.PRODUCTS))
