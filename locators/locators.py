@@ -103,14 +103,17 @@ class ShippingLocators:
     SHIPPING_METHODS = (By.CSS_SELECTOR, '[data-bind="click: element.selectShippingMethod"]')
     SHIPPING_COST = (By.CSS_SELECTOR, "span.price span.price")
     SHIPPING_METHOD_RADIO = (By.CSS_SELECTOR, ".col-method > .radio")
-    PROCEED_TO_CHECKOUT = (By.CSS_SELECTOR, "button.continue ")
+    PROCEED_TO_CHECKOUT = (By.CSS_SELECTOR, "button.continue")
     BACK_TO_CART = (By.CSS_SELECTOR, "div.back a.button")
 
 
 class PaymentLocators:
-    PROCEED_TO_CHECKOUT = (By.CSS_SELECTOR, "button.checkout")
+    PROCEED_TO_CHECKOUT = (By.CSS_SELECTOR, "button.checkout:not([disabled])")
     BACK_TO_SHIPPING = (By.CSS_SELECTOR, "div.back-btn a.back")
     PAYMENT_METHODS = (By.CSS_SELECTOR, ".payment-method-title label span")
+    COD = (By.CSS_SELECTOR, "[for='cashondelivery']")
+    BANK_TRANSFER = (By.CSS_SELECTOR, "[for='banktransfer']")
+    LOADING_PAGE = (By.CSS_SELECTOR, ".loading-mask[style='display: none;']")
 
 
 class OrderSummaryLocators:
