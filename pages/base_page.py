@@ -15,3 +15,7 @@ class BasePage:
             "SETUP", "url_list_view_configurable_options")
         self.configurable_product_page = self.config.get(
             "SETUP", "url_configurable_product_page")
+
+    @staticmethod
+    def string_to_float_price(price):
+        return float(price.split(" ")[0].replace(",", "."))

@@ -14,11 +14,9 @@ class CartPage(BasePage):
 
         products_price = self.driver.find_elements(*CartLocators.PRODUCT_TOTAL_PRICE)
         for product in products_price:
-            price = product.text.split(" ")[0].replace(",", ".")
-            products_total_price += float(price)
+            products_total_price += self.string_to_float_price(product.text)
 
-        total_price_summary = float(self.driver.find_element(*CartLocators.TOTAL_PRODUCTS_PRICE)
-                                    .text.split(" ")[0].replace(",", "."))
+        total_price_summary = self.string_to_float_price(self.driver.find_element(*CartLocators.TOTAL_PRODUCTS_PRICE).text)
         assert products_total_price == total_price_summary
 
     def increase_product_qty(self):
@@ -35,12 +33,10 @@ class CartPage(BasePage):
         return self.driver.find_element(*CartLocators.PRODUCT_QTY_INPUT).get_attribute("value")
 
     def get_product_price(self):
-        return float(self.driver.find_element(*CartLocators.PRODUCT_PRICE).text
-                     .split(" ")[0].replace(",", "."))
+        return self.string_to_float_price(self.driver.find_element(*CartLocators.PRODUCT_PRICE).text)
 
     def get_product_total_price(self):
-        return float(self.driver.find_element(*CartLocators.PRODUCT_TOTAL_PRICE).text
-                     .split(" ")[0].replace(",", "."))
+        return self.string_to_float_price(self.driver.find_element(*CartLocators.PRODUCT_TOTAL_PRICE).text)
 
     def recalculate_cart(self):
         self.driver.find_element(*CartLocators.UPDATE_CART).click()
