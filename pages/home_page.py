@@ -62,3 +62,7 @@ class HomePage(BasePage):
 
     def choose_first_attribute(self):
         self.driver.find_element(*ProductLocators.PRODUCT_OPTIONS).click()
+
+    def go_to_products_list(self):
+        self.open_home_page()
+        self.driver.find_element(*HomeLocators.MAIN_CATEGORIES).click()

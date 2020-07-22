@@ -9,6 +9,7 @@ class HomeLocators:
     WISH_LIST_ICON = (By.CSS_SELECTOR, ".link.wishlist")
     CART_ICON = (By.CSS_SELECTOR, ".showcart")
     GO_TO_CART = (By.CSS_SELECTOR, ".viewcart")
+    MAIN_CATEGORIES = (By.CSS_SELECTOR, ".level0.category-item")
     WOMAN_CATEGORY = (By.XPATH, '//span[text()="Damskie"]')
     MEN_CATEGORY = (By.XPATH, '//span[text()="Męskie"]')
     OUTLET_CATEGORY = (By.XPATH, '//span[text()="Outlet"]')
@@ -52,6 +53,14 @@ class ProductLocators(HomeLocators):
     PRODUCT_ATTRIBUTES = (By.CSS_SELECTOR, '[data-role="swatch-options"]')
     PRODUCT_OPTIONS = (By.CSS_SELECTOR, ".swatch-attribute-options > div")
     ERROR_MESSAGE = (By.CSS_SELECTOR, "div.mage-error")
+
+
+class ProductsListLocators:
+    SHOW_FILTERS = (By.CSS_SELECTOR, ".show-filters")
+    SIZE_OPTIONS = (By.CSS_SELECTOR, "div[attribute-code='rozmiar'] div a")
+    SHOW_SORT_OPTIONS = (By.CSS_SELECTOR, "div.sorter div.control")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".normal-price")
+    NEXT_PAGE = (By.CSS_SELECTOR, "a.next")
 
 
 class MiniCartLocators:
