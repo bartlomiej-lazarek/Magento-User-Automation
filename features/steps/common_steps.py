@@ -6,6 +6,12 @@ def step_impl(context):
     context.home_page.open_home_page()
 
 
+@Given("I'm not logged in and I open login page")
+def step_impl(context):
+    context.home_page.open_home_page()
+    context.home_page.go_to_authentication_page()
+
+
 @When("I hover on the product")
 def step_impl(context):
     context.home_page.hover_on_first_product()
@@ -35,7 +41,7 @@ def step_impl(context):
 def step_impl(context):
     context.home_page.open_home_page()
     context.home_page.go_to_authentication_page()
-    context.authentication_page.fill_login_form(True)
+    context.authentication_page.fill_login_form("current_password")
     context.authentication_page.perform_login()
 
 

@@ -13,6 +13,7 @@ Feature: Operation on products page
     And I choose M size
     Then Only products with that size should be displayed
 
+  @skip
   Scenario: Change number of products displayed on page
     Given I'm on the products list page
     When I change products list limit to 15 from 9

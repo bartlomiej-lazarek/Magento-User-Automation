@@ -129,3 +129,20 @@ class OrderSummaryLocators:
     ORDER_NUMBER = (By.CSS_SELECTOR, ".checkout-success p span")
     CONTINUE_SHOPPING = (By.CSS_SELECTOR, "a.continue")
     CREATE_ACCOUNT = (By.CSS_SELECTOR, '//span[text()="Utwórz konto"]')
+
+
+class CustomerAccountLocators:
+    LOGOUT = (By.CSS_SELECTOR, "li.authorization-link a")
+    SAVE_BUTTON = (By.CSS_SELECTOR, "button.save")
+    ORDERS_MENU = (By.XPATH, "//li//a[contains(@href,'/order/history')]")
+    ORDERS = (By.CSS_SELECTOR, "#my-orders-table tbody tr")
+    NEWSLETTER_MENU = (By.XPATH, "//li//a[contains(@href,'/newsletter')]")
+    SUBSCRIBE_CHECKBOX = (By.CSS_SELECTOR, "label[for='subscription']")
+    CHANGE_PASSWORD = (By.CSS_SELECTOR, ".change-password")
+    CURRENT_PASSWORD = (By.CSS_SELECTOR, "#current-password")
+    NEW_PASSWORD = (By.CSS_SELECTOR, "#password")
+    CONFIRM_PASSWORD = (By.CSS_SELECTOR, "#password-confirmation")
+    ADDRESS_MENU = (By.XPATH, "//li//a[contains(@href,'/customer/address')]")
+    CHANGE_DELIVERY_ADDRESS = (By.CSS_SELECTOR, "div.box-address-shipping div.box-actions a")
+    STREET_INPUT = (By.CSS_SELECTOR, "#street_1")
+    DELIVERY_ADDRESS = (By.CSS_SELECTOR, "div.box-address-shipping address")

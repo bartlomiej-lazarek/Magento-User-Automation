@@ -1,10 +1,4 @@
-from behave import Given, Step, Then
-
-
-@Given("I'm not logged in and I open login page")
-def step_impl(context):
-    context.home_page.open_home_page()
-    context.home_page.go_to_authentication_page()
+from behave import Step, Then
 
 
 @Then("I click Create Account button")
