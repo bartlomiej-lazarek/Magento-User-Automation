@@ -19,8 +19,8 @@ class CustomerAccountPage(AuthenticationPage):
         self.fill_login_form("new_password")
         if "/customer/account/login" in self.driver.current_url:
             self.config.set("ACCOUNT", "current_password", self.new_password)
-            with open('config.ini', 'w') as f:
-                self.config.write(f)
+            with open('config.ini', 'w') as configfile:
+                self.config.write(configfile)
 
     def logout(self):
         self.driver.find_element(*CustomerAccountLocators.LOGOUT).click()

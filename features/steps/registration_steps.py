@@ -16,16 +16,11 @@ def step_impl(context):
     context.registration_page.perform_registration()
 
 
-@Step("I should see a message saying that the account has been successfully created")
-def step_impl(context):
-    assert len(context.driver.find_elements_by_css_selector(".message-success")) > 0
-
-
 @Step("I don't enter any the required registration information")
 def step_impl(context):
     pass
 
 
-@Then("I should see a message saying that the registration informations are required")
+@Then("I should see a message saying that the registration information are required")
 def step_impl(context):
     assert len(context.driver.find_elements_by_css_selector("div.mage-error")) > 0

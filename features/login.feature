@@ -12,5 +12,5 @@ Feature: Login in shop
     Given I'm not logged in and I open login page
     When I enter email and incorrect password
     And I click on Login button
-    Then I should see a message saying that the given data are incorrect
+    Then I should see the error message
 

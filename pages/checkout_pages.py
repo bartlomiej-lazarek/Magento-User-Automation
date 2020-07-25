@@ -1,9 +1,9 @@
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as ec
+
 from locators.locators import PaymentLocators, OrderSummaryLocators, CartLocators
 from locators.locators import ShippingLocators
 from pages.base_page import BasePage
-
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.support import expected_conditions as ec
 
 
 class PaymentPage(BasePage):
@@ -50,6 +50,3 @@ class OrderSummaryPage(BasePage):
 
     def get_order_number(self):
         return self.driver.find_element(*OrderSummaryLocators.ORDER_NUMBER).text
-
-
-

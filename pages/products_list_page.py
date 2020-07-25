@@ -1,8 +1,8 @@
 import time
+from selenium.webdriver.support import expected_conditions as ec
 
 from locators.locators import ProductsListLocators, CartLocators
 from pages.base_page import BasePage
-from selenium.webdriver.support import expected_conditions as ec
 
 
 class ProductsListPage(BasePage):
@@ -30,8 +30,6 @@ class ProductsListPage(BasePage):
         if len(self.driver.find_elements(*ProductsListLocators.NEXT_PAGE)) > 0:
             self.driver.find_element(*ProductsListLocators.NEXT_PAGE).click()
             return True
-        else:
-            return False
 
     def set_filter_size(self, size):
         self.driver.find_element_by_css_selector(f"[attribute-code='rozmiar'] a[aria-label='{size}']").click()
@@ -44,5 +42,3 @@ class ProductsListPage(BasePage):
 
         if self.next_page():
             self.check_filtered_products(size)
-
-

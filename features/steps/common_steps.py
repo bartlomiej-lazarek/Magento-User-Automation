@@ -58,3 +58,13 @@ def step_impl(context):
 @Then("I should be redirected to checkout-shipping page")
 def step_impl(context):
     assert "/checkout/#shipping" in context.driver.current_url
+
+
+@Then("I should see the success message")
+def step_impl(context):
+    assert context.home_page.check_if_success_msg_displayed()
+
+
+@Then("I should see the error message")
+def step_impl(context):
+    assert context.home_page.check_if_error_msg_displayed()

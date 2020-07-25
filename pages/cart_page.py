@@ -1,6 +1,8 @@
+from selenium.webdriver.support import expected_conditions as ec
+
 from locators.locators import CartLocators
 from pages.base_page import BasePage
-from selenium.webdriver.support import expected_conditions as ec
+
 
 
 class CartPage(BasePage):
@@ -16,7 +18,8 @@ class CartPage(BasePage):
         for product in products_price:
             products_total_price += self.string_to_float_price(product.text)
 
-        total_price_summary = self.string_to_float_price(self.driver.find_element(*CartLocators.TOTAL_PRODUCTS_PRICE).text)
+        total_price_summary = self.string_to_float_price(
+            self.driver.find_element(*CartLocators.TOTAL_PRODUCTS_PRICE).text)
         assert products_total_price == total_price_summary
 
     def increase_product_qty(self):

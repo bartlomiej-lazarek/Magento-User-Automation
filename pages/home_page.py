@@ -30,6 +30,7 @@ class HomePage(BasePage):
 
     def click_on_first_product(self):
         self.driver.find_element(*HomeLocators.PRODUCT_IMAGE).click()
+        self.wait.until(ec.presence_of_element_located(HomeLocators.HOME_PAGE_LOADED))
 
     def add_to_wish_list(self):
         self.driver.find_element(*HomeLocators.ADD_TO_WISH_LIST_BUTTON).click()

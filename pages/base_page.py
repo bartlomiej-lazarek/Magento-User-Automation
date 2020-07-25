@@ -2,6 +2,8 @@ import configparser
 
 from selenium.webdriver.support.wait import WebDriverWait
 
+from locators.locators import HomeLocators
+
 
 class BasePage:
 
@@ -19,3 +21,9 @@ class BasePage:
     @staticmethod
     def string_to_float_price(price):
         return float(price.split(" ")[0].replace(",", "."))
+
+    def check_if_success_msg_displayed(self):
+        return len(self.driver.find_elements(*HomeLocators.SUCCESS_MESSAGE)) > 0
+
+    def check_if_error_msg_displayed(self):
+        return len(self.driver.find_elements(*HomeLocators.ERROR_MESSAGE)) > 0

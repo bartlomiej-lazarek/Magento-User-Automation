@@ -1,5 +1,3 @@
-import time
-
 from behave import Step, Then, When
 
 
@@ -93,13 +91,3 @@ def step_impl(context):
 @Step("I click confirm code button")
 def step_impl(context):
     context.cart_page.confirm_coupon_code()
-
-
-@Step("I should see a message saying that the discount code is incorrect")
-def step_impl(context):
-    assert len(context.driver.find_elements_by_css_selector("div.message-error")) > 0
-
-
-@Then("I should see a message saying that the discount code is correct")
-def step_impl(context):
-    assert len(context.driver.find_elements_by_css_selector("div.message-success")) > 0

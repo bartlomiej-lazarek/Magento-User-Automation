@@ -11,12 +11,12 @@ Feature: Customer Account
     Then I should successfully login using new password
 
   @home_page @authentication_page @customer_account_page
-  Scenario: Join to the newsletter from customer account page
+  Scenario: Subscribe/Unsubscribe the newsletter from customer account page
     Given I'm logged user
     When I go to newsletter menu
     And I click on newsletter checkbox
     And I click save
-    Then I should see a message saying that I successfully joined to the newsletter
+    Then I should see the success message
 
   @home_page @authentication_page @customer_account_page
   Scenario: Change delivery address
@@ -25,7 +25,7 @@ Feature: Customer Account
     And I click on change delivery address
     And I set new street
     And I click save
-    Then I should see a message saying that I successfully changed address
+    Then I should see the success message
     And I should see new street in address menu
 
   @home_page @authentication_page @customer_account_page

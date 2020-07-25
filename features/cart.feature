@@ -39,13 +39,13 @@ Feature: Operations in cart
   Scenario: Add correct coupon code
     When I enter correct coupon code
     And I click confirm code button
-    Then I should see a message saying that the discount code is correct
+    Then I should see the success message
 
   @home_page @cart_page
   Scenario: Add incorrect coupon code
     When I enter incorrect coupon code
     And I click confirm code button
-    Then I should see a message saying that the discount code is incorrect
+    Then I should see the error message
 
   @home_page @cart_page
   Scenario: Back to the shop

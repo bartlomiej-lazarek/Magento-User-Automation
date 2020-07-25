@@ -5,14 +5,14 @@ Feature: Add product to cart
     Given I'm on the Magento home page
     When I hover on the product
     And I click Add to Cart button
-    Then I should see a message saying that the product has been successfully added
+    Then I should see the success message
 
   @home_page
   Scenario: Add simply product to cart from product page
     Given I'm on the Magento home page
     When I click on the product
     And I click Add to Cart button
-    Then I should see a message saying that the product has been successfully added
+    Then I should see the success message
 
   @home_page
   Scenario: Add configurable product to cart, choose attribute using hover
@@ -20,14 +20,14 @@ Feature: Add product to cart
     When I hover on the product
     And I click on one of attribute options
     And I click Add to Cart button
-    Then I should see a message saying that the product has been successfully added
+    Then I should see the success message
 
   @home_page
   Scenario: Add configurable product to cart, choose attribute from product page
     Given I'm on configurable product page
     When I click on one of attribute options
     And I click Add to Cart button
-    Then I should see a message saying that the product has been successfully added
+    Then I should see the success message
 
   @home_page
   Scenario: Add configurable product to cart, don't choose attribute from product page

@@ -7,7 +7,7 @@ Feature: Register new account
     And I enter all the required registration information
     And I click Create Account button in registration form
     Then I should be redirect to My Account page
-    And I should see a message saying that the account has been successfully created
+    And I should see the success message
 
   @home_page @authentication_page @registration_page
   Scenario: Unsuccessfully register new account
@@ -15,4 +15,4 @@ Feature: Register new account
     Then I click Create Account button
     And I don't enter any the required registration information
     And I click Create Account button in registration form
-    Then I should see a message saying that the registration informations are required
+    Then I should see a message saying that the registration information are required

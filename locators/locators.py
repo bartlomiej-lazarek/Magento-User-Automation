@@ -10,13 +10,7 @@ class HomeLocators:
     CART_ICON = (By.CSS_SELECTOR, ".showcart")
     GO_TO_CART = (By.CSS_SELECTOR, ".viewcart")
     MAIN_CATEGORIES = (By.CSS_SELECTOR, ".level0.category-item")
-    WOMAN_CATEGORY = (By.XPATH, '//span[text()="Damskie"]')
-    MEN_CATEGORY = (By.XPATH, '//span[text()="Męskie"]')
-    OUTLET_CATEGORY = (By.XPATH, '//span[text()="Outlet"]')
-    NEW_ARRIVALS_CATEGORY = (By.XPATH, '//span[text()="Nowości"]')
     BESTSELLERS_CATEGORY = (By.XPATH, '//span[text()="Bestsellery"]')
-    ACCESSORIES_CATEGORY = (By.XPATH, '//span[text()="Dodatki"]')
-    BRANDS_CATEGORY = (By.XPATH, '//span[text()="Marki"]')
     NEWSLETTER_INPUT = (By.CSS_SELECTOR, "#newsletter")
     NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "button.subscribe")
     NEWSLETTER_ERROR_MESSAGE = (By.CSS_SELECTOR, "#newsletter-error")
@@ -27,16 +21,18 @@ class HomeLocators:
     ADD_TO_WISH_LIST_BUTTON = (By.CSS_SELECTOR, "a.towishlist")
     CART_PRODUCTS_COUNTER = (By.CSS_SELECTOR, ".counter-number")
     HOME_PAGE_LOADED = (By.CSS_SELECTOR, "html.nav-open")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.message-success")
+    ERROR_MESSAGE = (By.CSS_SELECTOR, "div.message-error")
 
 
-class AuthenticationLocators(HomeLocators):
+class AuthenticationLocators:
     EMAIL_INPUT = (By.CSS_SELECTOR, "#email")
     PASSWORD_INPUT = (By.CSS_SELECTOR, "#pass")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "button.login")
     CREATE_ACC_BUTTON = (By.CSS_SELECTOR, "a.create")
 
 
-class RegistrationLocators(HomeLocators):
+class RegistrationLocators:
     FIRST_NAME = (By.CSS_SELECTOR, "#firstname")
     LAST_NAME = (By.CSS_SELECTOR, "#lastname")
     NEWSLETTER_SIGN_UP = (By.CSS_SELECTOR, "#is_subscribed")
@@ -47,9 +43,8 @@ class RegistrationLocators(HomeLocators):
     CREATE_ACCOUNT = (By.CSS_SELECTOR, "button.submit")
 
 
-class ProductLocators(HomeLocators):
+class ProductLocators:
     PRICE = (By.CSS_SELECTOR, "div.price-box span.price")
-    ADDED_PRODUCT_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".message-success")
     PRODUCT_ATTRIBUTES = (By.CSS_SELECTOR, '[data-role="swatch-options"]')
     PRODUCT_OPTIONS = (By.CSS_SELECTOR, ".swatch-attribute-options > div")
     ERROR_MESSAGE = (By.CSS_SELECTOR, "div.mage-error")
@@ -126,7 +121,7 @@ class PaymentLocators:
 
 
 class OrderSummaryLocators:
-    ORDER_NUMBER = (By.CSS_SELECTOR, ".checkout-success p span")
+    ORDER_NUMBER = (By.CSS_SELECTOR, ".order-number strong")
     CONTINUE_SHOPPING = (By.CSS_SELECTOR, "a.continue")
     CREATE_ACCOUNT = (By.CSS_SELECTOR, '//span[text()="Utwórz konto"]')
 

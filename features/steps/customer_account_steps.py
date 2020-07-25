@@ -42,11 +42,6 @@ def step_impl(context):
     context.customer_account_page.check_newsletter_checkbox()
 
 
-@Then("I should see a message saying that I successfully joined to the newsletter")
-def step_impl(context):
-    assert len(context.driver.find_elements_by_css_selector(".message-success")) > 0
-
-
 @When("I go to my orders menu")
 def step_impl(context):
     context.customer_account_page.go_to_orders_menu()
@@ -72,12 +67,6 @@ def step_impl(context):
     context.customer_account_page.open_delivery_address_form()
 
 
-@Then("I should see a message saying that I successfully changed address")
-def step_impl(context):
-    assert len(context.driver.find_elements_by_css_selector(".message-success")) > 0
-
-
 @Then("I should see new street in address menu")
 def step_impl(context):
     assert "newStreet" in context.customer_account_page.get_delivery_address()
-
