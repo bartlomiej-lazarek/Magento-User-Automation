@@ -1,3 +1,4 @@
+import re
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as ec
 
@@ -43,10 +44,13 @@ class ShippingPage(BasePage):
         self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
 
     def confirm_shipping_data(self):
+        self.wait.until(ec.presence_of_element_located(CartLocators.LOADED_CHECKOUT))
         self.driver.find_element(*ShippingLocators.PROCEED_TO_CHECKOUT).click()
 
 
 class OrderSummaryPage(BasePage):
 
     def get_order_number(self):
-        return self.driver.find_element(*OrderSummaryLocators.ORDER_NUMBER).text
+        self.wait.until(ec.url_contains("/checkout/onepage/success/"))
+        message = self.driver.find_element(*OrderSummaryLocators.ORDER_NUMBER).text
+        return re.findall(r'\d+', message)

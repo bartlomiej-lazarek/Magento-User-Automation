@@ -1,7 +1,7 @@
-from behave import Step, Then
+from behave import Step, Then, When
 
 
-@Then("I click Create Account button")
+@When("I click Create Account button")
 def step_impl(context):
     context.authentication_page.open_create_account_form()
 

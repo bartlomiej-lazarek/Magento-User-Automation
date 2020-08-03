@@ -121,7 +121,7 @@ class PaymentLocators:
 
 
 class OrderSummaryLocators:
-    ORDER_NUMBER = (By.CSS_SELECTOR, ".order-number strong")
+    ORDER_NUMBER = (By.CSS_SELECTOR, ".checkout-success")
     CONTINUE_SHOPPING = (By.CSS_SELECTOR, "a.continue")
     CREATE_ACCOUNT = (By.CSS_SELECTOR, '//span[text()="Utwórz konto"]')
 
